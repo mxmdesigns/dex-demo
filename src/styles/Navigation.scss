@@ -1,0 +1,38 @@
+.navigation {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background: #20232f;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  box-shadow: 0 4px 4px #0006;
+
+  .home-button {
+    color: #ccc;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  nav {
+    grid-column: 2 / span 1;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    font-size: 16px;
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 20px;
+
+      &:hover,
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+}
