@@ -24,7 +24,6 @@ export const Pokedex = () => {
 
   useEffect(() => {
     const getAllPokemon = async () => {
-      console.log(fetchedPokemonNames);
       if (!hasMorePokemon || updating) return;
 
       setUpdating(true);

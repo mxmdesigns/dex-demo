@@ -13,14 +13,14 @@ export const Navigation = () => {
       <nav>
         <a
           href="/pokedex"
-          className={classNames({ active: pathname == "/pokedex" })}
+          className={classNames({ active: pathname === "/pokedex" })}
         >
           Pokedex
         </a>
         <>|</>
         <a
           href="/split"
-          className={classNames({ active: pathname == "/split " })}
+          className={classNames({ active: pathname === "/split " })}
         >
           Split
         </a>

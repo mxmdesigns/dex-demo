@@ -1,0 +1,36 @@
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  overflow: hidden;
+
+  &__header {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000a;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+  &__item {
+    background: #111;
+    color: #4f605d;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-amount {
+      font-size: 20px;
+    }
+  }
+}
