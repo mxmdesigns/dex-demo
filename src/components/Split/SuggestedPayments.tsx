@@ -47,22 +47,26 @@ export const SuggestedPayments = ({ payments }) => {
     <div className="suggested">
       <div className="suggested__header">Suggested</div>
       <div className="suggested__content">
-        {consolidatedTransactions.map((transaction) => (
-          <div className="suggested__item">
-            <div className="suggested__item-users">
-              <div className="suggested__item-users--payor">
-                {USERS.find((user) => user.id === transaction.payee)?.name}
+        {payments.length > 0 ? (
+          consolidatedTransactions.map((transaction) => (
+            <div className="suggested__item">
+              <div className="suggested__item-users">
+                <div className="suggested__item-users--payor">
+                  {USERS.find((user) => user.id === transaction.payee)?.name}
+                </div>
+                <span> → </span>
+                <div className="suggested__item-users--payee">
+                  {USERS.find((user) => user.id === transaction.payor)?.name}
+                </div>
               </div>
-              <span> → </span>
-              <div className="suggested__item-users--payee">
-                {USERS.find((user) => user.id === transaction.payor)?.name}
+              <div className="suggested__item-amount">
+                {formatToPesos(transaction.amount as number)}
               </div>
             </div>
-            <div className="suggested__item-amount">
-              {formatToPesos(transaction.amount as number)}
-            </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div className="no-info">No information</div>
+        )}
       </div>
     </div>
   );

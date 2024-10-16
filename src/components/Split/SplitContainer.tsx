@@ -1,9 +1,12 @@
+import classNames from "classnames";
 import React from "react";
 import "../../styles/Split/SplitContainer";
 
-export const SplitContainer = ({ children }) => {
+export const SplitContainer = ({ children, mode }) => {
+  const modeClass = classNames("split", { dark: mode, light: !mode });
+
   return (
-    <div className="split">
+    <div className={modeClass}>
       <div className="split__screen">
         <div className="split__content">{children}</div>
       </div>

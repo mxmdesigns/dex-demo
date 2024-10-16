@@ -1,0 +1,51 @@
+:root {
+  .light {
+    --primary: #101816;
+    --secondary: #4f605e;
+    --primary-overlay: #1112;
+    --modal: #4f605e40;
+    --shadow: #0006;
+  }
+
+  .dark {
+    --primary: #4f605e;
+    --secondary: #141615;
+    --primary-overlay: #4f605e22;
+    --modal: #0006;
+    --shadow: #4f605e60;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-overlay);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.no-info {
+  color: var(--primary);
+  opacity: 0.5;
+  height: 100%;
+  font-size: 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div,
+button {
+  font-family: "VT323", monospace;
+}

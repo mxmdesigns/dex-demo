@@ -1,0 +1,80 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  grid-row: span 2;
+
+  &__button {
+    font-family: "VT323";
+    font-size: 24px;
+    background-color: var(--primary);
+    border: 2px solid #0000;
+    color: var(--secondary);
+    padding: 8px 16px;
+    width: 80%;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: background-color 50ms;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px dotted var(--primary);
+    }
+  }
+
+  &__settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-option {
+      font-size: 20px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary);
+
+      button {
+        width: 32px;
+        height: 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--primary);
+        padding: 0;
+        position: relative;
+        cursor: pointer;
+
+        div {
+          height: 16px;
+          width: 16px;
+          border-radius: 100%;
+          background-color: var(--secondary);
+          position: absolute;
+          left: 2px;
+          top: 2px;
+          transition: left 50ms;
+
+          &.active {
+            left: 14px;
+          }
+        }
+      }
+    }
+
+    &-close {
+      text-align: center;
+      border: none;
+      background-color: var(--primary);
+      color: var(--secondary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}

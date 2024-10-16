@@ -5,12 +5,16 @@
   width: 75vw;
   padding: 16px;
 
+  &.dark {
+    background-color: #000;
+  }
+
   &__screen {
-    background-color: #4f605d;
+    background-color: var(--secondary);
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    padding: 12px;
+    overflow: hidden;
     box-shadow: inset 0 0 8px #0008;
   }
 
@@ -20,7 +24,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
-    filter: drop-shadow(2px 2px 1px #0006);
+    filter: drop-shadow(2px 2px 1px var(--shadow));
     gap: 8px;
+    padding: 16px;
   }
 }

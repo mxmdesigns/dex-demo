@@ -10,7 +10,7 @@
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #000a;
+    color: var(--primary);
   }
 
   &__content {
@@ -18,15 +18,16 @@
     flex-direction: column;
     overflow-y: auto;
     padding-right: 8px;
+    height: 100%;
   }
 
   &__item {
-    color: #111;
+    color: var(--primary);
     padding: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px dotted #111;
+    border-top: 1px dotted var(--primary);
 
     &-users {
       display: grid;

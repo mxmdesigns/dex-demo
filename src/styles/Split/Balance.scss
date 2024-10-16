@@ -9,7 +9,7 @@
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #000a;
+    color: var(--primary);
   }
 
   &__content {
@@ -18,11 +18,12 @@
     gap: 8px;
     overflow-y: auto;
     padding-right: 8px;
+    height: 100%;
   }
 
   &__item {
-    background: #111;
-    color: #4f605d;
+    background: var(--primary);
+    color: var(--secondary);
     padding: 8px;
     border-radius: 8px;
     display: flex;

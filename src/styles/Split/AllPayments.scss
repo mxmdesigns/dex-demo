@@ -11,7 +11,7 @@
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #000a;
+    color: var(--primary);
   }
 
   &__content {
@@ -24,8 +24,8 @@
   }
 
   &__item {
-    color: #111;
-    border: 2px dotted #222;
+    color: var(--primary);
+    border: 2px dotted var(--primary);
     border-radius: 8px;
     flex-shrink: 0;
     padding: 12px 16px;
@@ -33,16 +33,17 @@
     grid-template-columns: 30% 1fr auto;
     column-gap: 16px;
     row-gap: 4px;
+    transition: background-color 50ms;
+    cursor: pointer;
 
     &:hover {
       background-color: #2421;
-      cursor: pointer;
     }
 
     &-id {
       grid-column: span 2;
       font-size: 16px;
-      color: #222;
+      color: var(--primary);
     }
 
     &-names {
@@ -69,22 +70,4 @@
       font-size: 20px;
     }
   }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0002;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #181818;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #131313;
 }

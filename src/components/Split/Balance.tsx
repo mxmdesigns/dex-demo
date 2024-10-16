@@ -11,18 +11,22 @@ export const Balance = ({ payments }) => {
     <div className="balance">
       <div className="balance__header">Balance</div>
       <div className="balance__content">
-        {Object.entries(balanceSheet)
-          .sort((a, b) => (b[1] as number) - (a[1] as number))
-          .map(([balancedUser, balance]) => (
-            <div className="balance__item">
-              <div className="balance__item-user">
-                {USERS.find((user) => user.id === balancedUser)?.name}
+        {payments.length > 0 ? (
+          Object.entries(balanceSheet)
+            .sort((a, b) => (b[1] as number) - (a[1] as number))
+            .map(([balancedUser, balance]) => (
+              <div className="balance__item">
+                <div className="balance__item-user">
+                  {USERS.find((user) => user.id === balancedUser)?.name}
+                </div>
+                <div className="balance__item-amount">
+                  {formatToPesos(balance as number)}
+                </div>
               </div>
-              <div className="balance__item-amount">
-                {formatToPesos(balance as number)}
-              </div>
-            </div>
-          ))}
+            ))
+        ) : (
+          <div className="no-info">No information</div>
+        )}
       </div>
     </div>
   );
