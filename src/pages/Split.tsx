@@ -1,8 +1,8 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AllPayments from "../components/Split/AllPayments";
 import Balance from "../components/Split/Balance";
 import Menu from "../components/Split/Menu";
-import { Modal } from "../components/Split/Modal";
+
 import PaymentForm from "../components/Split/PaymentForm";
 import SplitContainer from "../components/Split/SplitContainer";
 import SuggestedPayments from "../components/Split/SuggestedPayments";
@@ -10,25 +10,26 @@ import UserForm from "../components/Split/UserForm";
 import { PAYMENTS as SAMPLE_DATA } from "../js/sample_data";
 import { PaymentType } from "../js/types";
 import "../styles/Split/Global";
+import Drawer from "../components/Split/Drawer";
 
 export const Split = () => {
   const [payments, setPayments] = useState<PaymentType[]>([]);
   const [useSampleData, setUseSampleData] = useState<boolean>(false);
   const [mode, setMode] = useState<boolean>(false);
-  const [modal, setModal] = useState<"payment" | "user" | null>(null);
-  const [modalContent, setModalContent] = useState<React.ReactNode | null>(
+  const [drawer, setDrawer] = useState<"payment" | "user" | null>(null);
+  const [drawerContent, setDrawerContent] = useState<React.ReactNode | null>(
     null
   );
 
   useEffect(() => {
-    if (modal === "payment") {
-      setModalContent(<PaymentForm setPayments={setPayments} />);
-    } else if (modal === "user") {
-      setModalContent(<UserForm />);
+    if (drawer === "payment") {
+      setDrawerContent(<PaymentForm setPayments={setPayments} />);
+    } else if (drawer === "user") {
+      setDrawerContent(<UserForm />);
     } else {
-      setModalContent(null);
+      setDrawerContent(null);
     }
-  }, [modal]);
+  }, [drawer]);
 
   return (
     <SplitContainer mode={mode}>
@@ -40,12 +41,12 @@ export const Split = () => {
         setUseSampleData={setUseSampleData}
         mode={mode}
         setMode={setMode}
-        setModal={setModal}
+        setModal={setDrawer}
       />
-      <Modal
-        content={modalContent}
-        title={modal ? "Add " + modal : null}
-        setModal={setModal}
+      <Drawer
+        content={drawerContent}
+        title={drawer ? "Add " + drawer : null}
+        setDrawer={setDrawer}
       />
     </SplitContainer>
   );
